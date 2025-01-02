@@ -1,0 +1,46 @@
+.pages-container {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.pages-list {
+  display: inline-flex;
+  grid-template-columns: repeat(50, auto);
+  grid-gap: 6px;
+  margin: auto;
+  background-color: #1b261c;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #777;
+}
+
+.pages-list li {
+  display: inline-flex;
+}
+
+.pages-list button {
+  /* reset */
+  border: none;
+  margin: none;
+  padding: none;
+  background: none;
+
+  border-radius: 50%;
+  background-color: #eee;
+  width: 10px;
+  height: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #1b261c;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #777;
+}
