@@ -7,6 +7,7 @@ import Timeline from "./Timeline"
 import Points from "./Points"
 import Cuboids from "./Cuboids"
 import Loading from "./Loading"
+import Fullscreen from "./Fullscreen"
 
 const URL = "https://static.scale.com/uploads/pandaset-challenge/frame_"
 
@@ -61,6 +62,7 @@ function App() {
       </Canvas>
       <Tooltip label={tooltip} />
       <Timeline onChange={handleChangePage} page={page} />
+      <Fullscreen />
     </>
   )
 }
