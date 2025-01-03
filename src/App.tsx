@@ -6,6 +6,7 @@ import Tooltip from "./Tooltip"
 import Timeline from "./Timeline"
 import Points from "./Points"
 import Cuboids from "./Cuboids"
+import Loading from "./Loading"
 
 const URL = "https://static.scale.com/uploads/pandaset-challenge/frame_"
 
@@ -46,7 +47,7 @@ function App() {
   }, [page])
 
   if (points.length === 0) {
-    return <div>Loading</div>
+    return <Loading />
   }
 
   return (
