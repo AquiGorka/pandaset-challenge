@@ -37,7 +37,7 @@ function Points({ data, max }: PointsProps) {
       return
     }
     instancedMeshRef.current.instanceMatrix.needsUpdate = true
-  }, [])
+  }, [data, max])
 
   return (
     <instancedMesh ref={instancedMeshRef} args={[null, null, data.length]}>

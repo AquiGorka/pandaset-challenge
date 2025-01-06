@@ -10,6 +10,7 @@ import Loading from "./Loading"
 import Fullscreen from "./Fullscreen"
 
 const URL = "https://static.scale.com/uploads/pandaset-challenge/frame_"
+const cache = {}
 
 function App() {
   const [page, setPage] = useState(0)
@@ -34,6 +35,14 @@ function App() {
     setCuboids([])
     setMax(0)
 
+    if (cache[paddedPage]) {
+      const { points, cuboids, max } = cache[paddedPage]
+      setPoints(points)
+      setCuboids(cuboids)
+      setMax(max)
+      return
+    }
+
     const run = async () => {
       const url = `${URL}${paddedPage}.json`
       const raw = await fetch(url)
@@ -43,6 +52,8 @@ function App() {
       setPoints(res.points)
       setCuboids(res.cuboids)
       setMax(max)
+
+      cache[paddedPage] = { points: res.points, cuboids: res.cuboids, max }
     }
     run()
   }, [page])
